@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(15vh auto auto auto, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header-area header-area header-area"
+    "sidebar-area main-area main-area"
+    "footer-area footer-area footer-area";
+  /* siempre llamar dentro de lo que esta en el grid */
+  .layout-header {
+    background-color: black;
+    color: white;
+    height: 3em;
+    justify-content: stretch;
+    grid-area: header-area;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .layout-aside {
+    background-color: orange;
+    grid-area: sidebar-area;
+    display: flex;
+    justify-content: center;
+    .categories {
+      background-color: skyblue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 5%;
+      width: 8em;
+      list-style: none;
+      .li {
+        background-color: yellow;
+        color: black;
+      }
+      /* !!!ver porque no esta tomando el css del LI!!!! */
+    }
+  }
+  .layout-productside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+    background-color: white;
+    padding: 2%;
+    grid-area: main-area;
+
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10%;
+      align-items: center;
+      background-color: whitesmoke;
+      border-radius: 20%;
+      border: orange 2px solid;
+      margin-right: 20px;
+      margin-top: 3%;
+      padding: 20px;
+      font-size: medium;
+      .product-image img {
+        height: 300px;
+      }
+      .product-button button {
+        width: 20em;
+        color: white;
+        background-color: orange;
+
+        /* confirmar si esta bien colocar con pixeles el ancho del boton */
+      }
+    }
+  }
+  .layout-footer {
+    background-color: black;
+    color: white;
+    height: 3em;
+    grid-area: footer-area;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
